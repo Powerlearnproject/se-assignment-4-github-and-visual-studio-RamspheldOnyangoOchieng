@@ -162,34 +162,6 @@ Automate documentation generation.
 
 Run static site generators for web development projects.
 
-Example: Simple CI/CD Pipeline with GitHub Actions
-
-.github/workflows/ci-cd.yml (YAML file defining the workflow)
-
-YAML
-name: CI/CD Pipeline
-
-on:
-push:
-    branches: [ main ]
-
-jobs:
-build-test-deploy:
-    runs-on: ubuntu-latest
-    steps:
-- uses: actions/checkout@v3  # Checkout code from the repository
-- name: Install dependencies  # Install required tools and libraries
-        run: npm install
-- name: Run unit tests
-        run: npm test
-- name: Deploy to staging  # Deploy code to a staging environment (replace with your deployment steps)
-        uses: actions/deploy-ssh@v2
-        with:
-        host: ${{ secrets.STAGING_SERVER_HOST }}  # Access secrets stored in GitHub
-        username: ${{ secrets.STAGING_SERVER_USERNAME }}
-        key: ${{ secrets.STAGING_SERVER_SSH_KEY }}
-        # ... other deployment configuration options
-
 Introduction to Visual Studio:
 
 What is Visual Studio, and what are its key features? How does it differ from Visual Studio Code?
